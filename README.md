@@ -6,7 +6,7 @@ Changing today date's number to star shape.
 ## 2018.3.5 (problem solve)
 
 The problem of this code was I didn't change the system date to 1st day. 
-For example if today is 2018.3.5 Monday 
+For example, if today is 2018.3.5 Monday 
 ``
 calendar.day of week 
 ``
