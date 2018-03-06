@@ -11,8 +11,9 @@ For example, if today is 2018.3.5 Monday
 calendar.day of week 
 ``
 it prints 2. (Because day start with sunday)
-I only set year and month. So everyday 1st day has been changed and it doesn't fit 
-with real calendar. So I set to 1st day and solve the problem. 
+I only set year and month by scanner. I should have changed day to 1st day to figure out what date is 1st day. 
+So everyday startday(code) changed and problem occured. I thought problem was star shape but it was not.
+My Jcalendar doesn't fit with real calendar. So I set day to 1st day and solve the problem. 
 
 
 ![Alt text](https://item.kakaocdn.net/do/4be9625c0426fb7d21c0bff1e8af2e1df43ad912ad8dd55b04db6a64cddaf76d)
