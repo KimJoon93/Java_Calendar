@@ -13,9 +13,6 @@ calendar.day of week
 it prints 2. (Because day start with sunday)
 I only set year and month. So everyday 1st day has been changed and it doesn't fit 
 with real calendar. So I set to 1st day and solve the problem. 
- 
-## what
-### is 
-#### differnet
-##### mark down practice
+
+
 ![Alt text](https://item.kakaocdn.net/do/4be9625c0426fb7d21c0bff1e8af2e1df43ad912ad8dd55b04db6a64cddaf76d)
