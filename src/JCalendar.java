@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class JCalendar {
-	static int year, month;
+	static int year, month,date;
 	static String[] dayform = { "일", "월", "화", "수", "목", "금", "토" };
 	static String[][] dateform = new String[6][7];
 
@@ -21,12 +21,16 @@ public class JCalendar {
 
 		jcal.set(Calendar.YEAR, year);
 		jcal.set(Calendar.MONTH, month - 1);
+		jcal.set(Calendar.DATE, date);
 
 		int lastday = jcal.getActualMaximum(Calendar.DATE);
 		int startday = jcal.get(Calendar.DAY_OF_WEEK);
 		int day = 1;
-
+		
+		
+		/*오늘 날짜의 요일 */
 		System.out.println(startday);
+		
 
 		/* 숫자 표시 */
 		for (int i = 0; i < dateform.length; i++) {
@@ -34,12 +38,14 @@ public class JCalendar {
 			for (int j = 0; j < dateform[i].length; j++) {
 				if (day < (lastday + 1)) {
 
-					if (i == 0 && j < startday) {
+					if (i == 0 && j < startday-1) {
 						dateform[i][j] = "";
-					} else if (day == nowdate && year == nowyear && month == (nowmonth + 1)) {
+					} 
+					else if (day == nowdate && year == nowyear && month == (nowmonth + 1)) {
 						dateform[i][j] = "★";
 						day++;
-					} else {
+					} 
+					else {
 						dateform[i][j] = String.valueOf(day);
 						day++;
 					}
@@ -67,6 +73,14 @@ public class JCalendar {
 		}
 	}
 
+	public static int getDate() {
+		return date;
+	}
+
+	public static void setDate(int date) {
+		JCalendar.date = date;
+	}
+
 	public static int getYear() {
 		return year;
 	}
@@ -89,6 +103,7 @@ public class JCalendar {
 		year = sc.nextInt();
 		System.out.print("월을 입력하시오: ");
 		month = sc.nextInt();
+		date = 1;
 		System.out.println("검색날짜 : " + year + "년 " + month + "월");
 	}
 
