@@ -15,5 +15,8 @@ I only set year and month by scanner. I should have changed day to 1st day to fi
 So everyday startday(code) changed and problem occured. I thought problem was star shape but it was not.
 My Jcalendar doesn't fit with real calendar. So I set day to 1st day and solve the problem. 
 
+## 2018.3.7 (update)
+
+Making code more readability
 
 ![Alt text](https://item.kakaocdn.net/do/4be9625c0426fb7d21c0bff1e8af2e1df43ad912ad8dd55b04db6a64cddaf76d)
