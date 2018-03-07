@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class JCalendar {
-	static int year, month,date;
+	static int year, month, date;
 	static String[] dayform = { "일", "월", "화", "수", "목", "금", "토" };
 	static String[][] dateform = new String[6][7];
 
@@ -10,67 +10,9 @@ public class JCalendar {
 		// TODO Auto-generated method stub
 
 		JCalendar.scanning();
-		Calendar jcal = Calendar.getInstance();
+		JCalendar.calendarinfo();
+		JCalendar.form();
 
-		int nowyear = jcal.get(Calendar.YEAR);
-		int nowmonth = jcal.get(Calendar.MONTH);
-		int nowdate = jcal.get(Calendar.DATE);
-
-		System.out.println("현재날짜 : " + nowyear + "년 " + (nowmonth + 1) + "월 " + nowdate + "일");
-		System.out.println(" ");
-
-		jcal.set(Calendar.YEAR, year);
-		jcal.set(Calendar.MONTH, month - 1);
-		jcal.set(Calendar.DATE, date);
-
-		int lastday = jcal.getActualMaximum(Calendar.DATE);
-		int startday = jcal.get(Calendar.DAY_OF_WEEK);
-		int day = 1;
-		
-		
-		/*오늘 날짜의 요일 */
-		System.out.println(startday);
-		
-
-		/* 숫자 표시 */
-		for (int i = 0; i < dateform.length; i++) {
-
-			for (int j = 0; j < dateform[i].length; j++) {
-				if (day < (lastday + 1)) {
-
-					if (i == 0 && j < startday-1) {
-						dateform[i][j] = "";
-					} 
-					else if (day == nowdate && year == nowyear && month == (nowmonth + 1)) {
-						dateform[i][j] = "★";
-						day++;
-					} 
-					else {
-						dateform[i][j] = String.valueOf(day);
-						day++;
-					}
-
-				} else if (day > lastday) {
-					dateform[i][j] = "";
-				}
-
-			}
-		}
-
-		/* 요일 표시 */
-		for (int i = 0; i < dayform.length; i++) {
-			System.out.print(dayform[i] + "\t");
-		}
-
-		/* 날짜 표시 */
-		for (int i = 0; i < dateform.length; i++) {
-			System.out.println("\t");
-
-			for (int j = 0; j < dateform[i].length; j++) {
-
-				System.out.print(dateform[i][j] + "\t");
-			}
-		}
 	}
 
 	public static int getDate() {
@@ -108,7 +50,63 @@ public class JCalendar {
 	}
 
 	public static void calendarinfo() {
+		Calendar jcal = Calendar.getInstance();
 
+		int nowyear = jcal.get(Calendar.YEAR);
+		int nowmonth = jcal.get(Calendar.MONTH);
+		int nowdate = jcal.get(Calendar.DATE);
+
+		System.out.println("현재날짜 : " + nowyear + "년 " + (nowmonth + 1) + "월 " + nowdate + "일");
+		System.out.println(" ");
+
+		jcal.set(Calendar.YEAR, year);
+		jcal.set(Calendar.MONTH, month - 1);
+		jcal.set(Calendar.DATE, date);
+
+		int lastday = jcal.getActualMaximum(Calendar.DATE);
+		int startday = jcal.get(Calendar.DAY_OF_WEEK);
+		int day = 1;
+
+		/* 숫자 표시 */
+		for (int i = 0; i < dateform.length; i++) {
+
+			for (int j = 0; j < dateform[i].length; j++) {
+				if (day < (lastday + 1)) {
+
+					if (i == 0 && j < startday - 1) {
+						dateform[i][j] = "";
+					} else if (day == nowdate && year == nowyear && month == (nowmonth + 1)) {
+						dateform[i][j] = "★";
+						day++;
+					} else {
+						dateform[i][j] = String.valueOf(day);
+						day++;
+					}
+
+				} else if (day > lastday) {
+					dateform[i][j] = "";
+				}
+
+			}
+		}
+
+	}
+
+	public static void form() {
+		/* 요일 표시 */
+		for (int i = 0; i < dayform.length; i++) {
+			System.out.print(dayform[i] + "\t");
+		}
+
+		/* 날짜 표시 */
+		for (int i = 0; i < dateform.length; i++) {
+			System.out.println("\t");
+
+			for (int j = 0; j < dateform[i].length; j++) {
+
+				System.out.print(dateform[i][j] + "\t");
+			}
+		}
 	}
 
 }
