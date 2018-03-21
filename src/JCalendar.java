@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class JCalendar {
 	static int year, month, date;
+	static String[] weekform = {"January","Febuary","March","April","May","June","July","August","September","October","November","December"};
 	static String[] dayform = { "일", "월", "화", "수", "목", "금", "토" };
 	static String[][] dateform = new String[6][7];
 
@@ -94,6 +95,12 @@ public class JCalendar {
 
 	public static void form() {
 		/* 요일 표시 */
+		for(int i = 0; i < weekform.length; i++) {
+			if(i==month-1)
+			System.out.println("<" + weekform[i] + ">");
+		}
+		System.out.println();
+		
 		for (int i = 0; i < dayform.length; i++) {
 			System.out.print(dayform[i] + "\t");
 		}
